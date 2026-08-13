@@ -1,4 +1,4 @@
-PASOS GIT Y GITHUB â€” EcuabetExtractor
+PASOS GIT Y GITHUB — EcuabetExtractor
 Generado el 12 de agosto de 2026
 
 Rama oficial: main
@@ -18,9 +18,9 @@ git tag --list
 py -3.12 -m pytest
 
 
-3. CREAR EL REPOSITORIO PÃšBLICO DESDE CERO (una sola vez)
+3. CREAR EL REPOSITORIO PÚBLICO DESDE CERO (una sola vez)
 
-# GitHub CLI no estaba instalado al consolidar. InstÃ¡lalo y abre una terminal nueva:
+# GitHub CLI no estaba instalado al consolidar. Instálalo y abre una terminal nueva:
 winget install --id GitHub.cli
 gh auth login
 
@@ -31,7 +31,7 @@ gh repo create eslay07/ecuabet-extractor --public --source . --remote origin --p
 # No hay ramas alternativas pendientes.
 git push origin --tags
 
-# Alternativa si prefieres crear el repositorio vacÃ­o en github.com:
+# Alternativa si prefieres crear el repositorio vacío en github.com:
 # git remote add origin https://github.com/eslay07/ecuabet-extractor.git
 # git push -u origin main
 
@@ -41,15 +41,15 @@ git switch main
 git pull --ff-only origin main
 git status --short
 
-# Edita y prueba tus cambios. DespuÃ©s revisa exactamente lo que vas a confirmar:
+# Edita y prueba tus cambios. Después revisa exactamente lo que vas a confirmar:
 git diff
 git add -A
 git diff --cached --stat
 git diff --cached
-git commit -m "fix: mejorar validaciÃ³n de eventos extraÃ­dos" -m "Describe aquÃ­ quÃ© cambiÃ³, por quÃ© y cÃ³mo se validÃ³."
+git commit -m "fix: mejorar validación de eventos extraídos" -m "Describe aquí qué cambió, por qué y cómo se validó."
 git push origin main
 
-5. CREAR UNA RAMA PARA UNA VERSIÃ“N ALTERNATIVA
+5. CREAR UNA RAMA PARA UNA VERSIÓN ALTERNATIVA
 
 git switch main
 git pull --ff-only origin main
@@ -64,4 +64,4 @@ git push -u origin codex/nombre-de-la-variante
 git status --short
 git ls-files | Select-String -Pattern '(^|/)(\.env|\.clasp\.json|config\.json)$|\.(db|sqlite|log|key|pem|p12|pfx|keystore|jks)$'
 
-Si aparece una credencial, no hagas push. RetÃ­rala, revÃ³cala en el proveedor y vuelve a revisar todo el historial. Nunca uses fechas falsas: cada commit debe reflejar trabajo real ejecutado ese dÃ­a.
+Si aparece una credencial, no hagas push. Retírala, revócala en el proveedor y vuelve a revisar todo el historial. Nunca uses fechas falsas: cada commit debe reflejar trabajo real ejecutado ese día.
