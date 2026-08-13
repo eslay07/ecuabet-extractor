@@ -1,0 +1,6 @@
+{
+  "chrome_path": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+  "output_dir": "output",
+  "timezone": "America/Guayaquil",
+  "headless": false
+}

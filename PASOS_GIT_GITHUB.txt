@@ -1,0 +1,67 @@
+PASOS GIT Y GITHUB â€” EcuabetExtractor
+Generado el 12 de agosto de 2026
+
+Rama oficial: main
+Variantes: Ninguna variante adicional.
+Repositorio previsto: https://github.com/eslay07/ecuabet-extractor
+
+1. ABRIR EL PROYECTO Y REVISAR
+
+Set-Location 'F:\Proyectos 2026\ecuabet-extractor'
+git status --short
+git log --oneline --decorate --graph --all -n 30
+git branch --all
+git tag --list
+
+2. VALIDAR ANTES DE PUBLICAR
+
+py -3.12 -m pytest
+
+
+3. CREAR EL REPOSITORIO PÃšBLICO DESDE CERO (una sola vez)
+
+# GitHub CLI no estaba instalado al consolidar. InstÃ¡lalo y abre una terminal nueva:
+winget install --id GitHub.cli
+gh auth login
+
+# Crear el repositorio, asociar origin y publicar la rama oficial:
+gh repo create eslay07/ecuabet-extractor --public --source . --remote origin --push
+
+# Publicar variantes y etiquetas verificadas:
+# No hay ramas alternativas pendientes.
+git push origin --tags
+
+# Alternativa si prefieres crear el repositorio vacÃ­o en github.com:
+# git remote add origin https://github.com/eslay07/ecuabet-extractor.git
+# git push -u origin main
+
+4. FLUJO PARA FUTUROS CAMBIOS
+
+git switch main
+git pull --ff-only origin main
+git status --short
+
+# Edita y prueba tus cambios. DespuÃ©s revisa exactamente lo que vas a confirmar:
+git diff
+git add -A
+git diff --cached --stat
+git diff --cached
+git commit -m "fix: mejorar validaciÃ³n de eventos extraÃ­dos" -m "Describe aquÃ­ quÃ© cambiÃ³, por quÃ© y cÃ³mo se validÃ³."
+git push origin main
+
+5. CREAR UNA RAMA PARA UNA VERSIÃ“N ALTERNATIVA
+
+git switch main
+git pull --ff-only origin main
+git switch -c codex/nombre-de-la-variante
+# Realiza y valida los cambios.
+git add -A
+git commit -m "feat: agregar variante nombre-de-la-variante"
+git push -u origin codex/nombre-de-la-variante
+
+6. COMPROBACIONES DE SEGURIDAD
+
+git status --short
+git ls-files | Select-String -Pattern '(^|/)(\.env|\.clasp\.json|config\.json)$|\.(db|sqlite|log|key|pem|p12|pfx|keystore|jks)$'
+
+Si aparece una credencial, no hagas push. RetÃ­rala, revÃ³cala en el proveedor y vuelve a revisar todo el historial. Nunca uses fechas falsas: cada commit debe reflejar trabajo real ejecutado ese dÃ­a.
