@@ -51,3 +51,6 @@ firma/
 *.docx
 *.xlsx
 *.xls
+
+# Instrucciones locales para publicar la documentación
+documentacion/COMANDOS_COMMIT_DOCUMENTACION.txt
