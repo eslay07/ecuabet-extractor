@@ -1,5 +1,15 @@
 # EcuabetExtractor
 
+## Lectura rápida para evaluar el proyecto
+
+Herramienta local de extracción estructurada, checkpoints, validación y generación de reportes PDF.
+
+**Tecnologías:** Python · Playwright · JSON · ReportLab · pruebas automatizadas
+**Estado:** Proyecto específico de un sitio externo: su funcionamiento depende de la estructura y condiciones de acceso de ese sitio. Es una herramienta de datos, no una garantía de rentabilidad.
+
+[Ver el problema, la evidencia de implementación y las limitaciones](PORTFOLIO.md) · [Portafolio del autor](https://github.com/eslay07)
+
+
 Extractor local de cuotas prematch observadas en la cartelera pública de [Ecuabet](https://ecuabet.com/deportes). Navega con Playwright por CDP sobre la instalación local de Google Chrome, sin proxy, VPN, navegador cloud ni inicio de sesión. Cada comando crea un perfil temporal nuevo y lo elimina al cerrar, por lo que no reutiliza cookies ni tokens. Las cuotas se conservan como cadenas de texto.
 
 ## Requisitos y preparación
